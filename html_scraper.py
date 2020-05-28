@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import os
+from webdriver_manager.chrome import ChromeDriverManager
 
 # links from games
 links = [
@@ -12,7 +13,7 @@ links = [
         
         "https://eshop-prices.com/games/3226-untitled-goose-game?currency=MXN"           ,#Untitled Goose Game
         "https://eshop-prices.com/games/4296-good-job?currency=MXN"                      ,#Good Job
-        "https://eshop-prices.com/games/833-minecraft?currency=MXN"                      ,#Minecraft
+        "https://eshop-prices.com/games/4311-ty-the-tasmanian-tiger-hd?currency=MXN"     ,#Ty the tasmanian
         
         "https://eshop-prices.com/games/378-the-legend-of-zelda-breath-of-the-wild?currency=MXN",#Breath of Wild
         "https://eshop-prices.com/games/1209-super-mario-party?currency=MXN"             ,#Mario Party
@@ -28,7 +29,10 @@ links = [
         
         "https://eshop-prices.com/games/231-rime?currency=MXN"                           ,#Rime
         "https://eshop-prices.com/games/1188-undertale?currency=MXN"                     ,#Undertale
-        "https://eshop-prices.com/games/932-hollow-knight?currency=MXN"                   #Hollow Knight
+        "https://eshop-prices.com/games/833-minecraft?currency=MXN"                      ,#Minecraft
+        "https://eshop-prices.com/games/932-hollow-knight?currency=MXN"                  ,#Hollow Knight
+        "https://eshop-prices.com/games/200-oxenfree?currency=MXN"                       ,#Oxenfree
+        "https://eshop-prices.com/games/4371-what-the-golf?currency=MXN"                  #What The Golf?
         ]
 
 # used x paths
@@ -37,7 +41,8 @@ country_xpath = "/html/body/div[2]/div[1]/table/tbody/tr[1]/td[2]"
 
 # creating Chrome web driver
 chrome_options = webdriver.ChromeOptions()
-driver = webdriver.Chrome('C:\web_drivers\chromedriver.exe', options=chrome_options)
+#driver = webdriver.Chrome('C:\web_drivers\chromedriver.exe', options=chrome_options)
+driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.minimize_window()
 WebDriverWait(driver, 3)
 os.system('cls')
