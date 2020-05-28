@@ -40,8 +40,6 @@ price_xpath = "/html/body/div[2]/div[1]/table/tbody/tr[1]/td[4]"
 country_xpath = "/html/body/div[2]/div[1]/table/tbody/tr[1]/td[2]"
 
 # creating Chrome web driver
-chrome_options = webdriver.ChromeOptions()
-#driver = webdriver.Chrome('C:\web_drivers\chromedriver.exe', options=chrome_options)
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.minimize_window()
 WebDriverWait(driver, 3)
